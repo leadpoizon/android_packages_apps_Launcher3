@@ -57,7 +57,7 @@
     <!-- Far-right screen [4] -->
 
     <!-- Hotseat (We use the screen as the position of the item in the hotseat) -->
-    <!-- Dialer, Contacts, [All Apps], Messaging, Browser -->
+    <!-- Dialer, Messaging, [All Apps], Browser, Camera -->
     <resolve
         launcher:container="-101"
         launcher:screen="0"
@@ -72,18 +72,10 @@
             launcher:className="com.android.dialer.DialtactsActivity" />
     </resolve>
 
-    <favorite
-        launcher:packageName="com.android.contacts"
-        launcher:className="com.android.contacts.activities.PeopleActivity"
+    <resolve
         launcher:container="-101"
         launcher:screen="1"
         launcher:x="1"
-        launcher:y="0" />
-
-    <resolve
-        launcher:container="-101"
-        launcher:screen="3"
-        launcher:x="3"
         launcher:y="0" >
         <favorite
             launcher:uri="#Intent;action=android.intent.action.MAIN;category=android.intent.category.APP_MESSAGING;end" />
@@ -96,10 +88,13 @@
             launcher:packageName="com.android.mms"
             launcher:className="com.android.mms.ui.ConversationList" />
     </resolve>
+
+    <!-- All Apps -->
+
     <resolve
         launcher:container="-101"
-        launcher:screen="4"
-        launcher:x="4"
+        launcher:screen="3"
+        launcher:x="3"
         launcher:y="0" >
         <favorite
             launcher:uri="#Intent;action=android.intent.action.MAIN;category=android.intent.category.APP_BROWSER;end" />
@@ -108,6 +103,20 @@
         <favorite
             launcher:packageName="com.android.browser"
             launcher:className="com.android.browser.BrowserActivity" />
+    </resolve>
+
+
+    <resolve
+        launcher:container="-101"
+        launcher:screen="4"
+        launcher:x="4"
+        launcher:y="0" >
+        <favorite launcher:uri="#Intent;action=android.media.action.STILL_IMAGE_CAMERA;end" />
+        <favorite launcher:uri="#Intent;action=android.intent.action.CAMERA_BUTTON;end" />
+
+        <favorite
+            launcher:packageName="com.android.camera"
+            launcher:className="com.android.camera.camera" />
     </resolve>
 
 </favorites>
